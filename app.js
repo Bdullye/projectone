@@ -31,13 +31,13 @@ function execute() {
       ],
       "roles": [
         "legislatorLowerBody",
-        "legislatorUpperBody"
+        "legislatorUpperBody",
       ],
       "resource": {}
     })
         .then(function(response) {
-                // Handle the results here (response.result has the parsed body).
-                console.log("Response", response);
-              },
-              function(err) { console.error("Execute error", err); });
+            // Handle the results here (response.result has the parsed body).
+            console.log("Response", response);
+            },
+            function(err) { console.error("Execute error", err); });
   }
