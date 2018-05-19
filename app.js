@@ -14,8 +14,8 @@ $(document).ready(function(){
           console.log(data)
           });
 
-          $.ajax({
-            url:"https://www.googleapis.com/civicinfo/v2/representatives?key=AIzaSyDJ0c90sjJFsOWJYVeCj44tdedOKuguVoo&address=1263%20Pacific%20Ave.%20Kansas%20City%20KS",
+         $.ajax({
+            url:"https://www.googleapis.com/civicinfo/v2/representatives?key=AIzaSyDJ0c90sjJFsOWJYVeCj44tdedOKuguVoo&address=texas&levels=country&roles=legislatorLowerBody&roles=legislatorUpperBody",
             type: "GET",
             dataType: 'json',
           }).done(function(data){
@@ -23,3 +23,21 @@ $(document).ready(function(){
           });
     });
 });
+function execute() {
+    return gapi.client.civicinfo.representatives.representativeInfoByAddress({
+      "address": "texas",
+      "levels": [
+        "country"
+      ],
+      "roles": [
+        "legislatorLowerBody",
+        "legislatorUpperBody"
+      ],
+      "resource": {}
+    })
+        .then(function(response) {
+                // Handle the results here (response.result has the parsed body).
+                console.log("Response", response);
+              },
+              function(err) { console.error("Execute error", err); });
+  }
