@@ -2,8 +2,9 @@ $(document).ready(function(){
 
     $(".searchBtn").on("click",function(event) {
         event.preventDefault();
-        var zipCode = "";
+        var zipCode = $("#zipcode").val().trim();
         console.log(zipCode);
+        
 
         // update these based off of the html
         var address = "Alaska";
@@ -13,11 +14,17 @@ $(document).ready(function(){
 
         var members = "W000802";
          $.ajax({
-            url:"https://www.googleapis.com/civicinfo/v2/representatives?key=AIzaSyDJ0c90sjJFsOWJYVeCj44tdedOKuguVoo&address=" + address + "&includeOffices=true&levels=country&roles=legislatorLowerBody&roles=legislatorUpperBody",
+            url:"https://www.googleapis.com/civicinfo/v2/representatives?address=" + zipCode + "&levels=country&roles=legislatorUpperBody&roles=legislatorLowerBody&key=AIzaSyDJ0c90sjJFsOWJYVeCj44tdedOKuguVoo",
             type: "GET",
             dataType: 'json',
           }).done(function(googleData){
               console.log(googleData);
+              console.log(googleData.officials.length);
+              var officials = googleData.officials;
+              var officialsLength = googleData.officials.length;
+              for (i = 0; i < officialsLength; i++) {
+                $('<button type="button" class="btn btn-primary" />').text(officials[i].name).appendTo('body');
+              }
 
               
             $.ajax({
