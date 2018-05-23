@@ -20,6 +20,7 @@ $(document).ready(function(){
           }).done(function(googleData){
               console.log(googleData);
               console.log(googleData.officials.length);
+              var stateCode = googleData.normalizedInput.state;
               var officials = googleData.officials;
               var officialsLength = googleData.officials.length;
               for (i = 0; i < officialsLength; i++) {
