@@ -29,7 +29,7 @@ $(document).ready(function(){
 
               
             $.ajax({
-                url: "https://api.propublica.org/congress/v1/members/senate/" + stateCode + "/current.json",
+                url: "https://api.propublica.org/congress/v1/members/C001056.json",
                 type: "GET",
                 dataType: 'json',
                 headers: {'X-API-Key': 'cuph598ZH7Aqoo7VuNPeQ2a4UNbzOSsKpnJJl6jw'}
