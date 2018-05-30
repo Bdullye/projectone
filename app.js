@@ -1,6 +1,20 @@
 $(document).ready(function(){
 
+// Initialize Firebase
+var config = {
+  apiKey: "AIzaSyDc6SV15WjITnz3pM65DHn9UdBMHxNfQRY",
+  authDomain: "stay-civil.firebaseapp.com",
+  databaseURL: "https://stay-civil.firebaseio.com",
+  projectId: "stay-civil",
+  storageBucket: "",
+  messagingSenderId: "721910789320"
+};
+firebase.initializeApp(config);
+
+var database = firebase.database();
+var searchAnalytics = {};
     var senatorData = [];
+
     $(".searchBtn").on("click",function(event) {
         event.preventDefault();
         var zipCode = $("#zipcode").val().trim();
@@ -49,7 +63,26 @@ $(document).ready(function(){
                 $('.results').append(senatorBtn);
               }
 
-              
+            searchAnalytics.state = googleData.normalizedInput.state;
+            searchAnalytics.zip = zipCode;
+            searchAnalytics.queryCount = 1;
+            
+            var stateZips = database.ref(googleData.normalizedInput.state).orderByChild("zip");//.equalTo(zipCode);
+            var dbZip = false;
+            console.log(stateZips);
+            for (i = 0; i < stateZips.length; i++) {
+              if (stateZips[i].zip == zipCode){
+                stateZips[i].queryCount = parseInt(stateZips[i].queryCount) + 1;
+                dbZip = true;
+              }
+            }
+
+            if (!dbZip){
+              database.ref(googleData.normalizedInput.state).push(searchAnalytics);
+            }else {
+              database.ref(googleData.normalizedInput.state).update(stateZips);
+            }
+
             $.ajax({
                 url: "https://api.propublica.org/congress/v1/members/senate/" + stateCode + "/current.json",
                 type: "GET",
