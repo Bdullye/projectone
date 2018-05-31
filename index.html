@@ -16,6 +16,7 @@
     <script src="https://cdn.jsdelivr.net/momentjs/2.12.0/moment.min.js"></script>
     <link href="css/reset.css" rel="stylesheet">
     <link href="css/style.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Marck+Script" rel="stylesheet">
 </head>
 
 <body>
@@ -23,13 +24,13 @@
     <div class="container">
         <div class="row">
             <div class="col-sm-1"></div>
-            <div class="col-sm-9">
-                <div class="jumbotron">
+            <div class="col-sm-9 flagIMG">
+                <div class="jumbotron customJB">
                     <h1 class="display-1">Stay Civil</h1>
                     <form>
                         <div class="form-group-zip">
-                            <label for="zipcode">Zip Code or State</label>
-                            <input type="zipcode" class="form-control" id="zipcode" placeholder="Enter Zip Code or State">
+                            <label for="zipcode" style="margin-bottom: .17em;">Zip Code</label>
+                            <input type="zipcode" class="form-control" id="zipcode" placeholder="Enter Zip Code">
                         </div>
                         <button type="submit" class="searchBtn">Search</button>
                     </form>
@@ -40,8 +41,8 @@
     <div class="col-sm-1"></div>
     <!-- Modal -->
     <div class="row">
-        <div class="col-sm-1"></div>
-            <div class="col-sm-9">
+        <div class="col-sm-4"></div>
+            <div class="col-sm-4">
                 <div class='results' data-toggle="modal" data-target="#callback"></div>
                 <div class='senator-info' style="visibility: hidden;" data-toggle="modal" data-target="#callback"></div>
                 <div class="modal fade" id="callback" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
@@ -65,11 +66,19 @@
                 </div>
             </div>
         </div>
-        <div class="col-sm-1"></div>
+        <div class="col-sm-4"></div>
     </div>
 </div>
 
   
+
+    
+
+
+</body>
+<script src="app.js"></script>
+
+</html>
 
     
 
