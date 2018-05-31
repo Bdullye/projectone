@@ -14,6 +14,7 @@ body {
     background: url("../css/images/stars.jpg");
     height:100%;
     overflow-x: hidden;
+
 }
 
 .container {
@@ -22,14 +23,21 @@ body {
 
 
 .jumbotron {
-    background: url("../css/images/usa.jpg");
+    background: url(../css/images/usa.jpg);
     background-repeat: no-repeat;
+    height: fit-content;
+    overflow-x: hidden;
+    padding-bottom: 0;
+}
+.customJB {
+    border-style: solid solid solid solid;
+    border-color: black;
+    border-width: .35rem
+
 }
 
-
-
 img {
-    max-width: 200px;
+    max-width: 15em;
 }
 
 .btn {
@@ -39,7 +47,7 @@ img {
     }
 
 form{
-    font-family: "Times New Roman";
+
     font-weight: bold;
     font-size: 2.0em;
     text-align: center;
@@ -58,14 +66,15 @@ form{
 }
 
 .display-1 {
-    font-family   : "Times New Roman";
-    font-size     : 9em;
-    font-weight   : 900;
-    letter-spacing: 0.04em;
-    text-align    : center;
-    margin-bottom : 0.65em;
+    font-size: 10.5em;
+    font-weight: 900;
+    /* letter-spacing: 0.04em; */
+    text-align: center;
+    margin-bottom: 0.65em;
     /* color: rgb(77, 14, 14); */
     color: black;
+    font-family: 'Marck Script', 'cursive';
+    word-spacing: -.2em;
 }
 
 h2 {
@@ -87,7 +96,10 @@ p {
 .page {
     position: relative;
 }
-
+.searchBtn {
+    margin-bottom: .25em;
+    margin-top: .25em;
+}
 
 
 @media all and (max-width: 860px), all and (max-device-width: 860px) {
