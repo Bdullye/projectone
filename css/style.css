@@ -1,5 +1,4 @@
-
-:root {
+/* :root {
     --color-background    : #f0f2f0;
     --color-light-brown   : #ebd9a3;
     --color-light-blue    : #78b6ed;
@@ -7,19 +6,49 @@
     --color-text          : #202020;
     --color-text-contrast : #f9f6e3;
     --color-text-highlight: #ff6600;
-}
+} */
 
-body, input, label {
-    background-color: var(--color-background);
-    color           : var(--color-text);
-    font-family     : "Quicksand", sans-serif;
-    font-size       : 18px;
+body {
+    width  : 100%;
+    margin : auto;
+    background: url("../css/images/stars.jpg");
+    height:100%;
+    overflow-x: hidden;
 }
 
 .container {
-    width  : 840px;
-    margin : auto;
-    padding: 2.5% 0;
+    padding: 3.3% 0;
+}
+
+
+.jumbotron {
+    background: url("../css/images/usa.jpg");
+    background-repeat: no-repeat;
+}
+
+
+
+img {
+    max-width: 200px;
+}
+
+.btn {
+    color: white;
+    border-color: black;
+    background-color: darkred;
+    }
+
+form{
+    font-family: "Times New Roman";
+    font-weight: bold;
+    font-size: 2.0em;
+    text-align: center;
+    color: black;
+}
+
+#zipcode {
+    color: black;
+    text-align: center;
 }
 
 .clearfix::after {
@@ -28,15 +57,15 @@ body, input, label {
     clear  : both;
 }
 
-h1 {
-    color         : var(--color-dark-blue);
-    font-family   : "Encode Sans Condensed", sans-serif;
-    font-size     : 3.2em;
-    font-weight   : bold;
-    letter-spacing: 0.08em;
+.display-1 {
+    font-family   : "Times New Roman";
+    font-size     : 9em;
+    font-weight   : 900;
+    letter-spacing: 0.04em;
     text-align    : center;
-
     margin-bottom : 0.65em;
+    /* color: rgb(77, 14, 14); */
+    color: black;
 }
 
 h2 {
@@ -59,100 +88,6 @@ p {
     position: relative;
 }
 
-#login {
-    width  : 33%;
-    margin : auto;
-    padding: 12% 14%;
-    border : 2px double gray;
-}
-
-label {
-    display      : block;
-    margin-top   : 2em;
-    margin-bottom: 1em;
-}
-
-input {
-    background-color: white;
-    
-    display         : block;
-    width           : 94%;
-    padding         : 2% 3%;
-    margin-bottom   : 2em;
-}
-
-#button_submit {
-    background-color: var(--color-light-blue);
-    color           : var(--color-text-contrast);
-    font-family     : "Quicksand", sans-serif;
-    font-size       : 1.15em;
-    font-weight     : bold;
-    letter-spacing  : 0.03em;
-    text-align      : center;
-    
-    width           : 90%;
-    border          : 3px solid var(--color-dark-blue);
-    padding         : 4% 4.5%;
-}
-
-#errorMessage {
-    margin: 8% 0 4% 0;
-}
-
-#player0 {
-    width: 48%;
-    float: left;
-}
-
-#player1 {
-    width: 48%;
-    float: right;
-}
-
-.stats {
-    margin-bottom: 8%;
-}
-
-.display > div {
-    margin       : auto;
-    margin-bottom: 3%;
-    border       : 1px black solid;
-    padding      : 3%;
-
-    font-size    : 1.2em;
-    text-align   : center;
-}
-
-.display > div:hover {
-    background-color: var(--color-light-blue);
-    color           : var(--color-text-contrast);
-}
-
-#chat {
-    position: absolute;
-    top     : 20em;
-    width   : 100%;
-}
-
-#chatDisplay {
-    background-color: var(--color-light-blue);
-    color           : var(--color-text-contrast);
-
-    width           : 90%;
-    height          : 10em;
-    margin-bottom   : 2%;
-    border          : 1px solid var(--color-dark-blue);
-    padding         : 3% 5%;
-}
-
-#chatDisplay > p {
-    line-height: 1.25em;
-}
-
-#chatMessage {
-    width : 93.5%;
-    height: 60%;
-}
 
 
 @media all and (max-width: 860px), all and (max-device-width: 860px) {
@@ -176,25 +111,5 @@ input {
         font-size: 1.8em;
     }
 
-    #login {
-        width  : 62%;
-        padding: 6% 12%;
-    }
 
-    #player0, #player1 {
-        float        : none;
-        width        : 62%;
-        margin       : auto;
-        margin-bottom: 0.75em;
-        border       : 2px solid gray;
-        padding      : 6% 12%;
-    }
-
-    #chat {
-        position: static;
-        top     : 0;
-        width   : 80%;
-        margin  : auto;
-        padding : 6% 12%;
-    }
 }
