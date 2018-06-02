@@ -1,34 +1,75 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Document</title>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/js/bootstrap.min.js" integrity="sha384-uefMccjFJAIv6A+rW+L4AHf99KvxDjWSu1z9VI8SKNVmz4sk7buKt/6v9KI65qnm" crossorigin="anonymous"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.0/umd/popper.min.js" integrity="sha384-cs/chFZiN24E4KMATLdqdvsezGxaGsi4hLGOzlXwp5UZB1LY//20VyM2taTB4QvJ" crossorigin="anonymous"></script>
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css" integrity="sha384-9gVQ4dYFwwWSjIDZnLEWnxCjeSWFphJiwGPXr1jddIhOegiu1FwO5qRGvFXOdJZ4" crossorigin="anonymous">
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/js/bootstrap.min.js" integrity="sha384-uefMccjFJAIv6A+rW+L4AHf99KvxDjWSu1z9VI8SKNVmz4sk7buKt/6v9KI65qnm"
+        crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.0/umd/popper.min.js" integrity="sha384-cs/chFZiN24E4KMATLdqdvsezGxaGsi4hLGOzlXwp5UZB1LY//20VyM2taTB4QvJ"
+        crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css" integrity="sha384-9gVQ4dYFwwWSjIDZnLEWnxCjeSWFphJiwGPXr1jddIhOegiu1FwO5qRGvFXOdJZ4"
+        crossorigin="anonymous">
     <script src="https://cdn.jsdelivr.net/momentjs/2.12.0/moment.min.js"></script>
+    <link href="css/reset.css" rel="stylesheet">
+    <link href="css/style.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Marck+Script" rel="stylesheet">
+    <script src="https://www.gstatic.com/firebasejs/5.0.3/firebase.js"></script>
 </head>
+
 <body>
-    <div class = "container">
-        <div class = "jumbotron">
-            <h1 class="display-1">Stay Civil</h1>
-            <form>
-                    <div class="form-group">
-                      <label for="zipcode">Zip Code</label>
-                      <input type="number" class="form-control" id="zipcode" placeholder="Enter Zip Code">
-                    </div>
-                    <div class="form-group">
-                      <label for="city">City</label>
-                      <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Enter City">
-                    </div>
-                    <button type="submit" class="searchBtn">Search</button>
-                  </form>
+
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-1"></div>
+            <div class="col-sm-9 flagIMG">
+                <div class="jumbotron customJB">
+                    <h1 class="display-1">Stay Civil</h1>
+                    <form>
+                        <div class="form-group-zip">
+                            <label for="zipcode" style="margin-bottom: .17em;">Zip Code</label>
+                            <input type="zipcode" class="form-control" id="zipcode" placeholder="Enter Zip Code">
+                        </div>
+                        <button type="submit" class="searchBtn">Search</button>
+                    </form>
+                </div>
+            </div>
         </div>
+   
+    <div class="col-sm-1"></div>
+    <!-- Modal -->
+    <div class="row">
+        <div class="col-sm-4"></div>
+            <div class="col-sm-4">
+                <div class='results' data-toggle="modal" data-target="#callback"></div>
+                <div class='senator-info' style="visibility: hidden;" data-toggle="modal" data-target="#callback"></div>
+                <div class="modal fade" id="callback" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                    <div class="modal-dialog" role="document">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <h5 class="modal-title" id="exampleModalLabel"></h5>
+                                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                    <span aria-hidden="true">&times;</span>
+                                </button>
+                            </div>
+                   
+                        <div class="modal-body">
+                            <div class='results'></div>
+                            <div class='senator-info'></div>
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-sm-4"></div>
     </div>
-    
-</body>
+</div>
 <script src="app.js"></script>
+</body>
 </html>

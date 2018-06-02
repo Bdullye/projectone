@@ -1,0 +1,127 @@
+/* :root {
+    --color-background    : #f0f2f0;
+    --color-light-brown   : #ebd9a3;
+    --color-light-blue    : #78b6ed;
+    --color-dark-blue     : #3773a8;
+    --color-text          : #202020;
+    --color-text-contrast : #f9f6e3;
+    --color-text-highlight: #ff6600;
+} */
+
+body {
+    width  : 100%;
+    margin : auto;
+    background: url("../css/images/stars.jpg");
+    height:100%;
+    overflow-x: hidden;
+
+}
+
+.container {
+    padding: 3.3% 0;
+}
+
+
+.jumbotron {
+    background: url(../css/images/usa.jpg);
+    background-repeat: no-repeat;
+    height: fit-content;
+    overflow-x: hidden;
+    padding-bottom: 0;
+}
+.customJB {
+    border-style: solid solid solid solid;
+    border-color: black;
+    border-width: .35rem
+
+}
+
+img {
+    max-width: 15em;
+}
+
+.btn {
+    color: white;
+    border-color: black;
+    background-color: darkred;
+    }
+
+form{
+
+    font-weight: bold;
+    font-size: 2.0em;
+    text-align: center;
+    color: black;
+}
+
+#zipcode {
+    color: black;
+    text-align: center;
+}
+
+.clearfix::after {
+    content: "";
+    display: block;
+    clear  : both;
+}
+
+.display-1 {
+    font-size: 10.5em;
+    font-weight: 900;
+    /* letter-spacing: 0.04em; */
+    text-align: center;
+    margin-bottom: 0.65em;
+    /* color: rgb(77, 14, 14); */
+    color: black;
+    font-family: 'Marck Script', 'cursive';
+    word-spacing: -.2em;
+}
+
+h2 {
+    color         : var(--color-text-highlight);
+    font-size     : 1.8em;
+    font-weight   : bold;
+    letter-spacing: 0.04em;
+    
+    margin-bottom : 0.85em;
+}
+
+p {
+    letter-spacing: 0.03em;
+    line-height   : 1.5em;
+    
+    margin-bottom : 3%;
+}
+
+.page {
+    position: relative;
+}
+.searchBtn {
+    margin-bottom: .25em;
+    margin-top: .25em;
+}
+
+
+@media all and (max-width: 860px), all and (max-device-width: 860px) {
+    body, input, label {
+        font-size: 30px;
+        font-size: 3.49vw;
+    }
+
+    .container {
+        width  : 100%;
+        margin : auto;
+        padding: 2.5% 0;
+    }
+
+    h1 {
+        font-size    : 2.4em;
+        margin-bottom: 0.75em;
+    }
+
+    h2 {
+        font-size: 1.8em;
+    }
+
+
+}
