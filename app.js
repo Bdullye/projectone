@@ -87,14 +87,14 @@ var searchAnalytics = {};
             type: "GET",
             dataType: 'json',
             headers: { 'X-API-Key': 'cuph598ZH7Aqoo7VuNPeQ2a4UNbzOSsKpnJJl6jw' }
-          }).done(function (proData3) {
-            console.log(proData3);
-            var coSponsor2 = (proData3.results[0].roles[0].bills_cosponsored);
-            var sponsor2 = (proData3.results[0].roles[0].bills_sponsored);
-            var committes2 = (proData3.results[0].roles[0].committees[i].name); 
-            var subcommittees2 = (proData3.results[0].roles[0].subcommittees[i].name); 
-            var voteParty2 = (proData3.results[0].roles[0].votes_with_party_pct);
-            var voteMissed2 = (proData3.results[0].roles[0].missed_votes_pct);
+          }).done(function (proData) {
+            console.log(proData);
+            var coSponsor2 = (proData.results[0].roles[0].bills_cosponsored);
+            var sponsor2 = (proData.results[0].roles[0].bills_sponsored);
+            var committes2 = (proData.results[0].roles[0].committees[i].name); 
+            var subcommittees2 = (proData.results[0].roles[0].subcommittees[i].name); 
+            var voteParty2 = (proData.results[0].roles[0].votes_with_party_pct);
+            var voteMissed2 = (proData.results[0].roles[0].missed_votes_pct);
             //senatorInformation = proData;
           });
           for (i = 0; i < officialsLength; i++) {
